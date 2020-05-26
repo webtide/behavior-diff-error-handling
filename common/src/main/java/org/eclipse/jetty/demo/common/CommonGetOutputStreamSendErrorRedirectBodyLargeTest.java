@@ -99,7 +99,7 @@ public abstract class CommonGetOutputStreamSendErrorRedirectBodyLargeTest extend
             resp.setContentType("text/plain");
             resp.setCharacterEncoding("UTF-8");
 
-            // produce content below the aggregate buffer threshold
+            // produce content above the aggregate buffer threshold
             ServletOutputStream outputStream = resp.getOutputStream();
             outputStream.println("Not here, go there: " + resp.getHeader("Location"));
 
