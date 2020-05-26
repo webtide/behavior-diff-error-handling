@@ -23,7 +23,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 
-public abstract class AbstractSendErrorRedirectBodyTest extends AbstractCommonTest
+public abstract class CommonSendErrorRedirectBodyTest extends AbstractCommonTest
 {
     private Server server;
     private HttpClient client;

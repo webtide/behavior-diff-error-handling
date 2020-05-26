@@ -1,12 +1,12 @@
 package org.eclipse.jetty.demo.jetty9425;
 
 import org.eclipse.jetty.client.HttpClient;
-import org.eclipse.jetty.demo.common.AbstractSendErrorRedirectBodyTest;
+import org.eclipse.jetty.demo.common.CommonSendErrorRedirectBodyTest;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 
-public class SendErrorRedirectBodyTest extends AbstractSendErrorRedirectBodyTest
+public class SendErrorRedirectBodyTest extends CommonSendErrorRedirectBodyTest
 {
     @Override
     public Server newServer()
