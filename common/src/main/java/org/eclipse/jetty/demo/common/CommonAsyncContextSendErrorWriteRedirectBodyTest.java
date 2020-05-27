@@ -103,25 +103,25 @@ public class CommonAsyncContextSendErrorWriteRedirectBodyTest extends AbstractCo
         assertThat("response.body", responseBody, not(containsString("<html><body>What the world needs now...</body></html>")));
     }
 
-    public static void sendMovedPermanently(HttpServletResponse resp, String location) throws IOException
+    public static void sendMovedPermanently(HttpServletResponse response, String redirectUrl) throws IOException
     {
         // Reset the response.
         // Clears out recently set headers
         // Resets the Output mode from STREAM or WRITER to UNSET.
-        resp.reset();
+        response.reset();
 
         // Set the location header (requirement for 302 redirect)
-        resp.setHeader("Location", location);
+        response.setHeader("Location", redirectUrl);
 
         // TODO: make sure to change caching headers here if you need to
 
         // Set status for 302 redirect
-        resp.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+        response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 
         // Ensure that no other content is written by other processes
         // And force the response to commit
-        resp.getOutputStream().close();
-        resp.flushBuffer();
+        response.getOutputStream().close();
+        response.flushBuffer();
     }
 
     public static class TossErrorServlet extends HttpServlet
